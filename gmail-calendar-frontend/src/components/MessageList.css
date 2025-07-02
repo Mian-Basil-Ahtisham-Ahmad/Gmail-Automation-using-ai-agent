@@ -1,0 +1,259 @@
+.message-list {
+  flex: 1;
+  overflow-y: auto;
+  background-color: #343541;
+}
+
+.message-container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.welcome-message {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #d1d5db;
+}
+
+.welcome-message h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.welcome-message p {
+  margin-bottom: 2rem;
+  color: #8e8ea0;
+}
+
+.example-queries {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.example-query {
+  background-color: #40414f;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.example-query:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  background-color: #4a4b5a;
+}
+
+.message {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message.user {
+  background-color: transparent;
+}
+
+.message.assistant {
+  background-color: #444654;
+  padding: 1.5rem 1rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  border-radius: 8px;
+}
+
+.message-avatar {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background-color: #565869;
+}
+
+.message.user .message-avatar {
+  background-color: #5436da;
+}
+
+.message.assistant .message-avatar {
+  background-color: #10a37f;
+}
+
+.message-avatar svg {
+  width: 20px;
+  height: 20px;
+  color: #fff;
+}
+
+.message-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.message-role {
+  font-weight: 600;
+  color: #fff;
+}
+
+.message-time {
+  font-size: 0.75rem;
+  color: #8e8ea0;
+}
+
+.message-text {
+  color: #d1d5db;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+/* Markdown styling */
+.message-text h1,
+.message-text h2,
+.message-text h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.message-text p {
+  margin-bottom: 1rem;
+}
+
+.message-text p:last-child {
+  margin-bottom: 0;
+}
+
+.message-text ul,
+.message-text ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.message-text li {
+  margin-bottom: 0.25rem;
+}
+
+.message-text code {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+.message-text pre {
+  background-color: #2d2e3f;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.message-text pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.message-text a {
+  color: #10a37f;
+  text-decoration: none;
+}
+
+.message-text a:hover {
+  text-decoration: underline;
+}
+
+.message-text blockquote {
+  border-left: 3px solid #565869;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: #8e8ea0;
+}
+
+.message-status {
+  font-size: 0.75rem;
+  color: #8e8ea0;
+  margin-top: 0.25rem;
+}
+
+/* Thinking indicator */
+.thinking-indicator {
+  display: flex;
+  gap: 4px;
+  padding: 0.5rem 0;
+}
+
+.thinking-indicator span {
+  width: 8px;
+  height: 8px;
+  background-color: #8e8ea0;
+  border-radius: 50%;
+  animation: thinking 1.4s infinite;
+}
+
+.thinking-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.thinking-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes thinking {
+  0%, 60%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .message-container {
+    padding: 1rem 0.5rem;
+  }
+  
+  .welcome-message {
+    padding: 2rem 1rem;
+  }
+  
+  .example-queries {
+    grid-template-columns: 1fr;
+  }
+  
+  .message {
+    gap: 0.75rem;
+  }
+  
+  .message-avatar {
+    width: 32px;
+    height: 32px;
+  }
+} 
